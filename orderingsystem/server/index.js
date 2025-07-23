@@ -4,6 +4,13 @@ const app = express();
 require('dotenv').config();
 
 const productsRoutes = require('./routes/products');
+// ...existing code...
+const ordersRouter = require('./routes/orders');
+const usersRouter = require('./routes/users');
+
+app.use('/api/orders', ordersRouter);
+app.use('/api/users', usersRouter);
+// ...existing code...
 
 app.use(cors());
 app.use(express.json());
